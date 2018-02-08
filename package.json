@@ -6,7 +6,7 @@
     "version": "3.5.0"
   },
   "scripts": {
-    "deploy": "hexo clean --config source/_data/next.yml && hexo g --config source/_data/next.yml -d"
+    "deploy": "hexo clean --config source/_data/next.yml && hexo g --config source/_data/next.yml && hexo d"
   },
   "dependencies": {
     "hexo": "^3.2.0",
