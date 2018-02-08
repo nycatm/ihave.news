@@ -78,5 +78,5 @@ theme: landscape
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: git@github.com:RayKr/raykr.github.io.git
+  repo: git@github.com:RayKr/ihave.news.git
   branch: gh-pages
