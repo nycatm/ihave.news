@@ -1,2 +1,2 @@
 # ihave.news
-my blob,hexo + travis ci
+my blog,hexo + travis ci
