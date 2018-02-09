@@ -55,10 +55,18 @@ npm install --save-dev hexo-util
 
 重点来了，详细步骤可参考[用 Travis CI 自动部署 hexo](https://segmentfault.com/a/1190000004667156)，作者已经说的比较详细。
 
-需要注意的一点是：
-1. 在`package.json`中增加`depoly`的命令行语句，防止travis在自动执行到`npm run deploy`这一步的时候报找不到该script的错。
-```
+需要注意的一点是：在`package.json`中增加`depoly`的命令行语句，防止travis在自动执行到`npm run deploy`这一步的时候报找不到该script的错。
+```json
 "scripts": {
   "deploy": "hexo clean && hexo g -d"
 },
 ```
+上述代码加在`dependencies`同级即可。
+
+其实配置完Travis发现，其实原理就是让Travis在云上帮我们执行本地化的编译、部署等操作，它也需要git pull项目下来，npm install安装依赖，hexo d -g去编译静态博客，并且依旧需要遵循github的权限验证，所以才需要配置了共私钥对。
+
+举一反三，通过这个博客的配置，同时也学会了使用Travis做持续集成测试。除了可以应用到其他项目中去，同时也开启了新世界的大门。
+
+## 后续
+
+在此基础上，研究slack集成travis，让每次自动测试的结果及时推送到slack上，完美！
