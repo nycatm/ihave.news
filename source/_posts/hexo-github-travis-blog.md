@@ -7,7 +7,7 @@ tags:
 - blog
 - travis
 categories:
-- 知识库
+- knowledge repo
 ---
 
 最近玩slack接触到 `Travis CI`，又突然想起自己好久没写技术blog了，想想尘封已久的hexo+coding.net，心想能不能把Travis CI加进去。
@@ -50,6 +50,7 @@ npm install --save-dev hexo-util
 1. 就是上边说的hexo-util的问题，已给出解决办法。
 2. 关于语言的问题，`v5.1.x`版本的中文是`zh-Hans`，而`v6.0.0`的中文是`zh-CN`，注意区分。
 3. 关于主题的配置文件，采用了`Hexo data files`特性，利用这个特性，可以放心更新next主题，而不担心配置丢失或烦于合并。
+6. `v6.0.0`的fancybox移至外部仓库依赖，所以需要自行添加，添加方法参见[详细安装步骤](https://github.com/theme-next/theme-next-fancybox)。
 
 ### 四、配置Travis CI
 
@@ -66,6 +67,11 @@ npm install --save-dev hexo-util
 其实配置完Travis发现，其实原理就是让Travis在云上帮我们执行本地化的编译、部署等操作，它也需要git pull项目下来，npm install安装依赖，hexo d -g去编译静态博客，并且依旧需要遵循github的权限验证，所以才需要配置了共私钥对。
 
 举一反三，通过这个博客的配置，同时也学会了使用Travis做持续集成测试。除了可以应用到其他项目中去，同时也开启了新世界的大门。
+
+## 个性化
+
+1. 配置自定义的css样式，主题目录下`source/css/_custom/custom.styl`
+2. [NexT使用说明](http://theme-next.iissnan.com/)
 
 ## 后续
 
