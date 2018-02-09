@@ -1,0 +1,64 @@
+---
+title: 使用Hexo+Github+TravisCI搭建自动发布的静态博客系统
+date: 2018-02-09 10:16:56
+tags:
+- hexo
+- github
+- blog
+- travis
+categories:
+- 知识库
+---
+
+最近玩slack接触到 `Travis CI`，又突然想起自己好久没写技术blog了，想想尘封已久的hexo+coding.net，心想能不能把Travis CI加进去。
+
+先列举要用到的东西：
+* Hexo - 快速、简洁且高效的博客框架
+* Github Pages - 完美的静态博客服务器（除大陆网速外）
+* NexT - 一款高质量且简洁优雅的Hexo主题
+* Travis CI - 一个持续集成测试工具
+
+其中，Travis CI 是我最新接触的，它是一款很好用的持续集成测试工具。它可以自动关联Github上的项目并且clone下来编译测试，现在就是利用它这一特性来实现hexo博客自动编译、部署。
+
+## 步骤及重点
+
+一些网上和官方文档都很明确的步骤不再详细叙述，只做记录，提高效率。
+
+### 一、先搞Hexo
+
+Hexo建站参考[Hexo官方文档](https://hexo.io/zh-cn/docs/index.html)
+
+没难度，需要注意几个点：
+1. 增加`hexo-deployer-git`依赖，防止部署时报错。
+```
+npm install --save hexo-deployer-git
+```
+2. 增加`hexo-util`到`dev`依赖，防止travis的npm版本<3,出现的`Error: Cannot find module 'hexo-util'`错误。
+```
+npm install --save-dev hexo-util
+```
+
+### 二、配置Github
+
+建库、同步本地什么的都是github基础操作，注意一点，建两个分支，`master`分支和对应源码，`gh-pages`分支作为hexo生成的静态页面上传分支。网上很多都说要用到xxx.github.io这个项目的，其实没必要，只需要推到其他分支即可，然后在setting里配置要作为页面显示的是哪个分支即可。
+
+### 三、使用NexT主题
+
+这个可以参考[Next帮助文档](https://github.com/iissnan/hexo-theme-next/blob/master/README.cn.md)，步骤说明很详细。
+
+其中需要注意的点：
+1. 就是上边说的hexo-util的问题，已给出解决办法。
+2. 关于语言的问题，`v5.1.x`版本的中文是`zh-Hans`，而`v6.0.0`的中文是`zh-CN`，注意区分。
+3. 关于主题的配置文件，采用了`Hexo data files`特性，利用这个特性，可以放心更新next主题，而不担心配置丢失或烦于合并。
+
+### 四、配置Travis CI
+
+重点来了，详细步骤可参考[用 Travis CI 自动部署 hexo](https://segmentfault.com/a/1190000004667156)，作者已经说的比较详细。
+
+需要注意的一点是：
+1. 在`package.json`中增加`depoly`的命令行语句，防止travis在自动执行到`npm run deploy`这一步的时候报找不到该script的错。
+```
+"scripts": {
+  "deploy": "hexo clean && hexo g -d"
+},
+```
