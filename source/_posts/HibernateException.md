@@ -2,7 +2,7 @@
 title: 异常总结
 date: 2016-05-19 10:17:43
 categories:
-- experience
+- exceptions
 tags:
 - hibernate
 - java

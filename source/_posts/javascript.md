@@ -1,7 +1,10 @@
 ---
 title: JavaScript温习笔记
 date: 2016-06-17 16:06:21
-tags: javascript
+tags: 
+- js
+categories:
+- js
 ---
 
 JavaScript严格区分大小写。

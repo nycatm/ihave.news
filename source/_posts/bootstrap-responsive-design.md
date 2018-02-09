@@ -2,8 +2,9 @@
 title: Bootstrap Responsive Design
 date: 2016-07-07 14:28:11
 tags:
-- html5
-- 前端
+- bootstrap
+categories:
+- js
 ---
 ## 基本使用方法
 1. 将所有的element放到`<div class="container-fluid">`中。

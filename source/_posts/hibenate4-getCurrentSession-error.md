@@ -1,8 +1,11 @@
 ---
-title: Hibenate4中getCurrentSession()报错
+title: Hibernate4中getCurrentSession()报错
 date: 2017-01-17 15:43:32
 categories:
-- experience
+- java
+tags:
+- java
+- hibernate
 ---
 ## 问题描述
 Hibernate4中，dao层直接注入sessionFactory，然后用getCurrentSession方法获取session，运行报错：

@@ -8,8 +8,9 @@ categories:
 ---
 关于Java开发设计六大原则与23中设计模式的总结，都是本人查阅资料后总结代码与说明文档，保存在github上供参阅。
 
-目录结构：
 <!-- more -->
+
+目录结构：
 * [创建型（creator）](https://github.com/RayKr/designmodels/tree/master/src/com/swroom/creator)
     * [单例模式（singleton）](https://github.com/RayKr/designmodels/tree/master/src/com/swroom/creator/singleton)
     * [工厂方法模式(factory method)](https://github.com/RayKr/designmodels/tree/master/src/com/swroom/creator/factory)

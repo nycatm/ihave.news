@@ -2,7 +2,9 @@
 title: 阿里云服务器ECS配置
 date: 2016-05-26 09:15:45
 categories:
-- experience
+- knowledge repo
+tags:
+- aliyun
 ---
 ## 配置
 

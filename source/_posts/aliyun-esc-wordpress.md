@@ -2,7 +2,9 @@
 title: 阿里云ECS搭建Wordpress
 date: 2017-01-16 10:39:34
 categories:
-- experience
+- knowledge repo
+tags:
+- aliyun
 ---
 
 **主要流程** 

@@ -3,6 +3,8 @@ title: $.getJSON()不同写法就可导致样式失效
 date: 2016-07-16 00:48:41
 tags:
 - bug
+categories:
+- bug
 ---
 正确写法如下：
 ```js

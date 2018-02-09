@@ -2,7 +2,9 @@
 title: Bootstrap Carousel异常 TypeError f0 is undefined
 date: 2016-07-14 20:56:21
 tags:
-- exception
+- bootstrap
+categories:
+- exceptions
 ---
 
 
