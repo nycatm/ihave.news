@@ -2,7 +2,7 @@
 title: Hexo博客系统+Next主题+CND加速建站备忘
 date: 2017-01-15 21:35:47
 categories: 
-- experience
+- knowledge repo
 ---
 ## Hexo搭建博客系统
 > [Hexo API](https://hexo.io/zh-cn/docs/)

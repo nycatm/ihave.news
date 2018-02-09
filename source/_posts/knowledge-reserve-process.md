@@ -2,7 +2,7 @@
 title: 知识储备进度
 date: 2016-05-23 21:29:49
 categories:
-- experience
+- knowledge-repo
 ---
 ## Spring
 **时间**：2016-04-27 至 2016-05-23
