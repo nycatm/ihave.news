@@ -5,16 +5,16 @@
 # Site
 title: iHave.News
 subtitle: i have news for you.
-description: java blockchain deeplearning
+description: Reader Writer
 author: Tsunglei Ching
 language: zh-Hans
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://ihave.news
 root: /
-permalink: :year/:month/:day/:title/
+permalink: post/:category/:title.html
 permalink_defaults:
 
 # Directory
