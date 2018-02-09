@@ -2,7 +2,10 @@
 title: 深入浅出解读比特币白皮书
 date: 2018-02-09 22:57:33
 tags:
+- bitcoin
+- blockchain
 categories:
+- blockchain
 ---
 
 ## 摘要
