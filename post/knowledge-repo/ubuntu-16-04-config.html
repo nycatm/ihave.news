@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  
+  <meta name="keywords" content="ubuntu,linux," />
+
+
+<meta name="description" content="调整鼠标灵敏度1sudo xset mouse 1.5 状态栏添加网络流量监控1234sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor  sudo apt-get update  sudo apt-get install indicator-sysmonitor  indicator-sysmonitor &amp;amp; 然后，可">
+<meta name="keywords" content="ubuntu,linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu 16.04 安装完成后的优化配置">
+<meta property="og:url" content="http://ihave.news/post/knowledge-repo/ubuntu-16-04-config.html">
+<meta property="og:site_name" content="iHave.News">
+<meta property="og:description" content="调整鼠标灵敏度1sudo xset mouse 1.5 状态栏添加网络流量监控1234sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor  sudo apt-get update  sudo apt-get install indicator-sysmonitor  indicator-sysmonitor &amp;amp; 然后，可">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-02-11T15:55:41.906Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Ubuntu 16.04 安装完成后的优化配置">
+<meta name="twitter:description" content="调整鼠标灵敏度1sudo xset mouse 1.5 状态栏添加网络流量监控1234sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor  sudo apt-get update  sudo apt-get install indicator-sysmonitor  indicator-sysmonitor &amp;amp; 然后，可">
+
+
+
+
+
+
+  <link rel="canonical" href="http://ihave.news/post/knowledge-repo/ubuntu-16-04-config.html"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+  <title>Ubuntu 16.04 安装完成后的优化配置 | iHave.News</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"> <div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">iHave.News</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">I have news for you.</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-user"></i> <br />关于</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签</a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类</a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+  
+
+
+
+ </div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://ihave.news/post/knowledge-repo/ubuntu-16-04-config.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Tsunglei Ching">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="iHave.News">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">Ubuntu 16.04 安装完成后的优化配置</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-09T21:49:59+00:00">2018-02-09</time>
+            
+
+            
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/knowledge-repo/" itemprop="url" rel="index"><span itemprop="name">knowledge repo</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="调整鼠标灵敏度"><a href="#调整鼠标灵敏度" class="headerlink" title="调整鼠标灵敏度"></a>调整鼠标灵敏度</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo xset mouse 1.5</span><br></pre></td></tr></table></figure>
+<h3 id="状态栏添加网络流量监控"><a href="#状态栏添加网络流量监控" class="headerlink" title="状态栏添加网络流量监控"></a>状态栏添加网络流量监控</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:fossfreedom/indicator-sysmonitor  </span><br><span class="line">sudo apt-get update  </span><br><span class="line">sudo apt-get install indicator-sysmonitor  </span><br><span class="line">indicator-sysmonitor &amp;</span><br></pre></td></tr></table></figure>
+<p>然后，可以配置开机启动，并且修改显示项。</p>
+<a id="more"></a>
+<h3 id="ubuntu-16-04-配置环境变量，以jdk举例说明"><a href="#ubuntu-16-04-配置环境变量，以jdk举例说明" class="headerlink" title="ubuntu 16.04 配置环境变量，以jdk举例说明"></a>ubuntu 16.04 配置环境变量，以jdk举例说明</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/environment</span><br></pre></td></tr></table></figure>
+<p>文件末尾添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">PATH=&quot;/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:$JAVA_HOME/bin&quot;</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JAVA_HOME/jre/lib</span><br><span class="line">export JAVA_HOME=/java/jdk1.8.0_121</span><br></pre></td></tr></table></figure></p>
+<p>保存后使环境变量生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/environment</span><br></pre></td></tr></table></figure></p>
+<p>还没完，现在的问题是如果重启电脑则会失效，还需要更改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo gedit /etc/profile</span><br></pre></td></tr></table></figure></p>
+<p>文件末尾添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">#set Java environment</span><br><span class="line"></span><br><span class="line">export JAVA_HOME=/dengyang/jdk1.8.0_56</span><br><span class="line">export JRE_HOME=$JAVA_HOME/jre</span><br><span class="line">export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH</span><br><span class="line">export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH</span><br></pre></td></tr></table></figure></p>
+<p>使设置生效<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure></p>
+<h3 id="修改root密码"><a href="#修改root密码" class="headerlink" title="修改root密码"></a>修改root密码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo passwd root</span><br></pre></td></tr></table></figure>
+<h3 id="安装Rime中文输入法"><a href="#安装Rime中文输入法" class="headerlink" title="安装Rime中文输入法"></a>安装Rime中文输入法</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ibus-rime</span><br></pre></td></tr></table></figure>
+<p>重启输入法搜索rime添加即可。</p>
+<h3 id="安装主题管理器"><a href="#安装主题管理器" class="headerlink" title="安装主题管理器"></a>安装主题管理器</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-tweak-tool unity-tweak-tool</span><br></pre></td></tr></table></figure>
+<h3 id="搞定更新中断被锁的问题"><a href="#搞定更新中断被锁的问题" class="headerlink" title="搞定更新中断被锁的问题"></a>搞定更新中断被锁的问题</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo rm /var/cache/apt/archives/lock</span><br><span class="line">sudo rm /var/lib/dpkg/lock</span><br></pre></td></tr></table></figure>
+<h3 id="安装快速启动软件Albert"><a href="#安装快速启动软件Albert" class="headerlink" title="安装快速启动软件Albert"></a>安装快速启动软件Albert</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:nilarimogard/webupd8</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install albert</span><br></pre></td></tr></table></figure>
+<h3 id="安装本地wiki软件Zim"><a href="#安装本地wiki软件Zim" class="headerlink" title="安装本地wiki软件Zim"></a>安装本地wiki软件Zim</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install zim</span><br></pre></td></tr></table></figure>
+<h3 id="修復一直卡在登錄頁面死循環的問題"><a href="#修復一直卡在登錄頁面死循環的問題" class="headerlink" title="修復一直卡在登錄頁面死循環的問題"></a>修復一直卡在登錄頁面死循環的問題</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + Alt + F1 登錄</span><br><span class="line">/usr/bin/sudo vim /etc/profile 刪除掉會引發異常的部分</span><br><span class="line">/usr/bin/sudo /sbin/reboot 重啓電腦</span><br></pre></td></tr></table></figure>
+<h3 id="创建快捷方式"><a href="#创建快捷方式" class="headerlink" title="创建快捷方式"></a>创建快捷方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /usr/share/applications</span><br><span class="line">gedit xxx.desktop</span><br></pre></td></tr></table></figure>
+<h3 id="linux-使用微信，用electron套壳"><a href="#linux-使用微信，用electron套壳" class="headerlink" title="linux 使用微信，用electron套壳"></a>linux 使用微信，用electron套壳</h3><p><a href="https://github.com/geeeeeeeeek/electronic-wechat/releases" target="_blank" rel="noopener">https://github.com/geeeeeeeeek/electronic-wechat/releases</a></p>
+<h3 id="linux-使用ss代理"><a href="#linux-使用ss代理" class="headerlink" title="linux 使用ss代理"></a>linux 使用ss代理</h3><p>安装shadowsocks-qt5<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:hzwhuang/ss-qt5</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install shadowsocks-qt5</span><br></pre></td></tr></table></figure></p>
+<p>配置代理服务器，无需多言<br>配置全局代理，需要使用genpac<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-pip</span><br><span class="line">pip install --upgrade pip</span><br><span class="line"></span><br><span class="line">sudo pip install genpac</span><br><span class="line">pip install --upgrade genpac</span><br><span class="line"></span><br><span class="line">genpac -p &quot;SOCKS5 127.0.0.1:1080&quot;  --gfwlist-url=https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt --output=&quot;autoproxy.pac&quot;</span><br></pre></td></tr></table></figure></p>
+<p>点击：System settings &gt; Network &gt; Network Proxy，选择 Method 为 Automatic，设置 Configuration URL 为 autoproxy.pac 文件的路径，点击 Apply System Wide。<br>格式如：file:///home/tsunglei/autoproxy.pac</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/ubuntu/" rel="tag"># ubuntu</a>
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/post/knowledge-repo/hexo-github-travis-blog.html" rel="next" title="使用Hexo+Github+TravisCI搭建自动发布的静态博客系统">
+                <i class="fa fa-chevron-left"></i> 使用Hexo+Github+TravisCI搭建自动发布的静态博客系统
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/post/MBA/mba-judge-scheme.html" rel="prev" title="关于形成公司内部议事机制的思考">
+                关于形成公司内部议事机制的思考 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.jpg"
+                alt="Tsunglei Ching" />
+            
+              <p class="site-author-name" itemprop="name">Tsunglei Ching</p>
+              <p class="site-description motion-element" itemprop="description">Read more, write better.</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">67</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/raykr" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:ray@boyamarine.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://weibo.com/uisecret" target="_blank" title="Weibo" rel="external nofollow"><i class="fa fa-fw fa-weibo"></i>Weibo</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/jing-yun-53-6/activities" target="_blank" title="Zhihu" rel="external nofollow"><i class="fa fa-fw fa-leaf"></i>Zhihu</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#调整鼠标灵敏度"><span class="nav-number">1.</span> <span class="nav-text">调整鼠标灵敏度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态栏添加网络流量监控"><span class="nav-number">2.</span> <span class="nav-text">状态栏添加网络流量监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ubuntu-16-04-配置环境变量，以jdk举例说明"><span class="nav-number">3.</span> <span class="nav-text">ubuntu 16.04 配置环境变量，以jdk举例说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改root密码"><span class="nav-number">4.</span> <span class="nav-text">修改root密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Rime中文输入法"><span class="nav-number">5.</span> <span class="nav-text">安装Rime中文输入法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装主题管理器"><span class="nav-number">6.</span> <span class="nav-text">安装主题管理器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搞定更新中断被锁的问题"><span class="nav-number">7.</span> <span class="nav-text">搞定更新中断被锁的问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装快速启动软件Albert"><span class="nav-number">8.</span> <span class="nav-text">安装快速启动软件Albert</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装本地wiki软件Zim"><span class="nav-number">9.</span> <span class="nav-text">安装本地wiki软件Zim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修復一直卡在登錄頁面死循環的問題"><span class="nav-number">10.</span> <span class="nav-text">修復一直卡在登錄頁面死循環的問題</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建快捷方式"><span class="nav-number">11.</span> <span class="nav-text">创建快捷方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-使用微信，用electron套壳"><span class="nav-number">12.</span> <span class="nav-text">linux 使用微信，用electron套壳</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux-使用ss代理"><span class="nav-number">13.</span> <span class="nav-text">linux 使用ss代理</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2016 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tsunglei Ching</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" rel="external nofollow" href="https://github.com/theme-next/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
